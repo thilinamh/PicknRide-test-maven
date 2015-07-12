@@ -30,16 +30,30 @@ public class UserResource {
 	
 	@POST
 	@Path("register") //http://localhost:8080/PicknRide/webapi/user/register
+	/*
+	 * content type - application/json
+	 * request body-
+	 * { 
+	 * "uID":"1",
+	 * "name":"jason",
+	 * "age":24,
+	 * "gender":"male",
+	 * "password":"weasdad",
+	 * "NIC":"995424545a"
+	 * }
+	 * 
+	 * */
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response register(User usr){
 		
-		for (User x:repo.findAll()){
+		/*for (User x:repo.findAll()){
 			System.out.println(x.getuID());
-		}
-		System.out.println();
+		}*/
+		
 		if(repo.getUser(usr.getuID()) == null){
 			repo.addUser(usr);
+			System.out.println(usr.getName()+" registered");
 			return Response.ok().build();
 		}else{
 			return Response.status(Status.CONFLICT).build();
