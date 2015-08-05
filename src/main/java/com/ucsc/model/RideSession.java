@@ -16,6 +16,16 @@ public class RideSession {
 	String startingPoint;
 	String endingPoint;
 	
+
+	public RideSession(String driverID, double startingTime, double endingTime,
+			ArrayList<Location> route) {
+		
+		this.driverID = driverID;
+		this.startingTime = startingTime;
+		this.endingTime = endingTime;
+		this.driverRoute = route;
+	}
+	
 	public String getStartingPoint() {
 		return startingPoint;
 	}
@@ -28,14 +38,7 @@ public class RideSession {
 	public void setEndingPoint(String endingPoint) {
 		this.endingPoint = endingPoint;
 	}
-	public RideSession(String driverID, double startingTime, double endingTime,
-			ArrayList<Location> route) {
-		
-		this.driverID = driverID;
-		this.startingTime = startingTime;
-		this.endingTime = endingTime;
-		this.driverRoute = route;
-	}
+	
 	public boolean isAvailable() {
 		return available;
 	}
