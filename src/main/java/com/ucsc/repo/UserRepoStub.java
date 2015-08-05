@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 import com.ucsc.model.User;
 public class UserRepoStub implements UserRepo {
 	
@@ -16,6 +17,13 @@ public class UserRepoStub implements UserRepo {
 		return users;
 	}
 	
+	public List<User> findAllInfo(){
+		List<User> lst= new ArrayList<>();
+		for (User x : users){
+			lst.add(x.getLightUser());
+		}
+		return lst;
+	}
 	public void addUser(User usr){
 		users.add(usr);
 	}

@@ -27,7 +27,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
+	       <dependency>
                 <groupId>org.glassfish.jersey</groupId>
                 <artifactId>jersey-bom</artifactId>
                 <version>${jersey.version}</version>
@@ -44,6 +44,17 @@
             <!-- use the following artifactId if you don't need servlet 2.x compatibility -->
             <!-- artifactId>jersey-container-servlet</artifactId -->
         </dependency>
+         <dependency>
+	      		<groupId>com.google.apis</groupId>
+	      		<artifactId>google-api-services-mapsengine</artifactId>
+	      		<version>v1-rev64-1.20.0</version>
+	    </dependency>
+	   <dependency>
+			<groupId>com.google.maps</groupId>
+			<artifactId>google-maps-services</artifactId>
+			<version>0.1.7</version>
+		</dependency>
+				            
         <!-- uncomment this to get JSON support -->
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
