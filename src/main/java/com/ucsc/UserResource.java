@@ -14,6 +14,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import com.google.api.*;
+import com.squareup.okhttp.Request;
 import com.ucsc.model.*;
 import com.ucsc.repo.*;
 import com.google.maps.GeoApiContext;
@@ -97,6 +98,7 @@ public Response authenticate(LoginRequest r) {
     // Implementation of your authentication logic
     if (r.getUserName().equals("tm") && r.getPassword().equals("qaz") ) {
         request.getSession(true);
+        
         return Response.ok().build();
     }
    return Response.notAcceptable(null).build();

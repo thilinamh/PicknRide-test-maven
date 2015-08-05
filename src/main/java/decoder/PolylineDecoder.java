@@ -34,9 +34,9 @@ public class PolylineDecoder {
   return poly;
  }
  
- public static void main(String args[]){
-	 ArrayList<Location> a = (ArrayList<Location>) PolylineDecoder.decodePoly("}sj~FrdzuOskDbki@`eJgoQ??xkC|cNzkHdP");
+ /*public static void main(String args[]){
+	 ArrayList<Location> a = (ArrayList<Location>) PolylineDecoder.decodePoly("a~l~Fjk~uOnzh@vlbBtc~@tsE`vnApw{A`dw@~w\\|tNtqf@l{Yd_Fblh@rxo@b}@xxSfytAblk@xxaBeJxlcBb~t@zbh@jc|Bx}C`rv@rw|@rlhA~dVzeo@vrSnc}Axf]fjz@xfFbw~@dz{A~d{A|zOxbrBbdUvpo@`cFp~xBc`Hk@nurDznmFfwMbwz@bbl@lq~@loPpxq@bw_@v|{CbtY~jGqeMb{iF|n\\~mbDzeVh_Wr|Efc\\x`Ij{kE}mAb~uF{cNd}xBjp]fulBiwJpgg@|kHntyArpb@bijCk_Kv~eGyqTj_|@`uV`k|DcsNdwxAott@r}q@_gc@nu`CnvHx`k@dse@j|p@zpiAp|gEicy@`omFvaErfo@igQxnlApqGze~AsyRzrjAb__@ftyB}pIlo_BflmA~yQftNboWzoAlzp@mz`@|}_@fda@jakEitAn{fB_a]lexClshBtmqAdmY_hLxiZd~XtaBndgC");
 	 for(Location x: a)
 	 System.out.println(x.getLatitude() +" "+x.getLongitude());	
- }
+ }*/
 }

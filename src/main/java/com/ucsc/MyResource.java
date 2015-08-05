@@ -5,6 +5,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.fasterxml.jackson.core.JsonParser;
+
 /**
  * Root resource (exposed at "myresource" path)
  */
@@ -22,4 +24,5 @@ public class MyResource {
     public String getIt() {
         return "Got it!";
     }
+    
 }
