@@ -21,7 +21,7 @@ private int age;
 private String uID;
 private String gender;
 private double rating;
-private String image;
+private String image="http://icons.iconarchive.com/icons/visualpharm/must-have/256/User-icon.png";
 
 
 @XmlTransient

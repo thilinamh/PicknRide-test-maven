@@ -23,11 +23,11 @@ import com.google.maps.model.LatLng;
 
 @Path("user")
 public class UserResource {
- public static  UserRepo repo =new UserRepoStub();
+ public static  UserRepo repos =new UserRepoStub();
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> getAll( ){
-		return repo.findAll();
+		return repos.findAll();
 	}
 	
 	
@@ -56,8 +56,8 @@ public class UserResource {
 			System.out.println(x.getuID());
 		}*/
 		System.out.println("Connected");
-		if(repo.getUser(usr.getuID()) == null){
-			repo.addUser(usr);
+		if(repos.getUser(usr.getuID()) == null){
+			repos.addUser(usr);
 			System.out.println(usr.getName()+" registered");
 			return Response.ok().build();
 		}else{
@@ -74,7 +74,7 @@ public class UserResource {
 	public User findUser(@PathParam("id") String ID){
 		//GeoApiContext  context = new GeoApiContext().setApiKey("AIzaFakeKey"); 
 		
-		User ret= repo.getUser(ID);
+		User ret= repos.getUser(ID);
 		if(ret !=null){
 			return ret;
 			
@@ -93,15 +93,17 @@ public class UserResource {
 @POST
 @Path("authenticate")
 @Consumes(MediaType.APPLICATION_JSON)
-public Response authenticate(LoginRequest r) {
-	System.out.println(r.getUserName()+" "+r.getPassword());	
-    // Implementation of your authentication logic
-    if (r.getUserName().equals("tm") && r.getPassword().equals("qaz") ) {
+public String authenticate(LoginRequest r) {
+	
+	//System.out.println(r.getUserName()+" "+r.getPassword());	
+	System.out.println(r.getuID());	
+   if (repos.auth(r.getuID(), r.getPassword()) ) {
         request.getSession(true);
-        
-        return Response.ok().build();
+        return "200";
+        //return Response.ok().build();
     }
-   return Response.notAcceptable(null).build();
+    return "500";
+   //return Response.notAcceptable(null).build();
     
 }
 

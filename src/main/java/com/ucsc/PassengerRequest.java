@@ -28,7 +28,7 @@ public class PassengerRequest {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> getAll( ){
-		return UserResource.repo.findAllInfo();
+		return UserResource.repos.findAllInfo();
 	}
 	
 	@GET
@@ -38,7 +38,7 @@ public class PassengerRequest {
 	public List<CommentListModel> getComments(@PathParam("id") String ID){
 		System.out.println(ID);
 		
-		User usr= UserResource.repo.getUser(ID);
+		User usr= UserResource.repos.getUser(ID);
 		List<CommentListModel> comments;
 		
 		if(usr != null){
@@ -58,8 +58,8 @@ public class PassengerRequest {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public int addComment(CommentRequest a){
-		User from = UserResource.repo.getUser(a.getFrom());
-		UserResource.repo.getUser(a.getTo()).addComment(from, a.getComment(), a.getRating());
+		User from = UserResource.repos.getUser(a.getFrom());
+		UserResource.repos.getUser(a.getTo()).addComment(from, a.getComment(), a.getRating());
 		System.out.println(a.getComment());
 		return 200;
 		

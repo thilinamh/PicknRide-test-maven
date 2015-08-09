@@ -16,6 +16,16 @@ public class UserRepoStub implements UserRepo {
 		
 		return users;
 	}
+	public boolean auth(String uID, String pwd){
+		for(User usr:users){
+			System
+			if(usr.getuID()==uID && usr.getPassword()==pwd){
+				return true;
+			}
+		}
+		return false;
+		
+	}
 	
 	public List<User> findAllInfo(){
 		List<User> lst= new ArrayList<>();

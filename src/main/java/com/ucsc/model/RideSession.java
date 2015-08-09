@@ -1,6 +1,6 @@
 package com.ucsc.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import decoder.Location;
 
@@ -11,14 +11,14 @@ public class RideSession {
 	String passengerID;
 	double startingTime;
 	double endingTime;
-	ArrayList<Location> driverRoute;
-	ArrayList<Location> passenderRoute;
+	List<Location> driverRoute;
+	List<Location> passenderRoute;
 	String startingPoint;
 	String endingPoint;
 	
 
 	public RideSession(String driverID, double startingTime, double endingTime,
-			ArrayList<Location> route) {
+			List<Location> route) {
 		
 		this.driverID = driverID;
 		this.startingTime = startingTime;
@@ -69,16 +69,16 @@ public class RideSession {
 	public void setEndingTime(double endingTime) {
 		this.endingTime = endingTime;
 	}
-	public ArrayList<Location> getDriverRoute() {
+	public List<Location> getDriverRoute() {
 		return driverRoute;
 	}
-	public void setDriverRoute(ArrayList<Location> driverRoute) {
+	public void setDriverRoute(List<Location> driverRoute) {
 		this.driverRoute = driverRoute;
 	}
-	public ArrayList<Location> getPassenderRoute() {
+	public List<Location> getPassenderRoute() {
 		return passenderRoute;
 	}
-	public void setPassenderRoute(ArrayList<Location> passenderRoute) {
+	public void setPassenderRoute(List<Location> passenderRoute) {
 		this.passenderRoute = passenderRoute;
 	}
 	
